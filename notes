@@ -22,11 +22,11 @@ DETAILS PAGE:
 - BASE functionality doesn't require the details to load correctly after refresh of the browser
 
 ADD MOVIE PAGE:
-- [ ] Inputs for:
-    - [ ] Movie title
-    - [ ] Movie poster image (url)
-    - [ ] Text area (description)
-    - [ ] Dropdown menu for genres
+- [x] Inputs for:
+    - [x] Movie title
+    - [x] Movie poster image (url)
+    - [x] Text area (description)
+    - [x] Dropdown menu for genres
 - [ ] Buttons:
     - [ ] 'Cancel' brings user back to Home Page
     - [ ] 'Save' updates the title and description in the database, 

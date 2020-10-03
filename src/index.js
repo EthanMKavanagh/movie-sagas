@@ -19,6 +19,21 @@ function* rootSaga() {
     yield takeEvery('FETCH_MOVIE', fetchMovieSaga);
     yield takeEvery('FETCH_GENRE', fetchGenreSaga);
     yield takeEvery('FETCH_INDIVIDUAL_MOVIE', fetchIndividualMovieSaga);
+    yield takeEvery('CREATE_MOVIE', createMovieSaga);
+}
+
+// POST new movie saga
+function* createMovieSaga(action) {
+    console.log('action.payload for POST:', action.payload);
+    yield axios({
+        method: 'POST',
+        url: '/api/movie',
+        data: action.payload
+    });
+
+    yield put({
+        type: 'FETCH_MOVIE'
+    });
 }
 
 // GET individual move saga

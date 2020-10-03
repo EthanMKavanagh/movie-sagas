@@ -80,6 +80,7 @@ class AddMovieButton extends Component {
                         <option value='Space-Opera'>Space-Opera</option>
                         <option value='Superhero'>Superhero</option>
                     </select>
+                    <button type='submit'>Submit</button>
                 </form>
             </div>
         );
