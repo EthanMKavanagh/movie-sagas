@@ -30,6 +30,7 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
+
           <Route path='/' exact>
             <Header />
           </Route>

@@ -16,7 +16,7 @@ HOME / LIST PAGE:
 - [x] When a movie is clicked, route to /details view
 
 DETAILS PAGE:
-- [ ] Show all details of that movie, including genre
+- [x] Show all details of that movie, including genre
 - [x] GET request for that specific movie
 - [x] 'Back to List' button that routes to home page
 - BASE functionality doesn't require the details to load correctly after refresh of the browser
