@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import {HashRouter as Router, Route} from 'react-router-dom';
-import './App.css';
 import {connect} from 'react-redux';
+import {withRouter} from 'react-router-dom';
+import Details from '../Details/Details';
+import './App.css';
 
 class App extends Component {
   componentDidMount = () => {
@@ -28,15 +30,20 @@ class App extends Component {
         <div className="App">
           <h1>Movies!</h1>
             {this.props.movies.map(movie => 
-              <div>
-                <img src={movie.poster} alt=''/>
-                <span>
-                {movie.title}
-                <hr />
-                {movie.description}
-                </span>
-              </div>
+                <div onClick={this.details}>
+                  <img src={movie.poster} alt=''/>
+                  {/* <br /> Just for now */}
+                  <br />
+                  <span>
+                  {movie.title}
+                  <hr />
+                  {movie.description}
+                  </span>
+                </div>
             )}
+          <Route path='/details' exact>
+            <Details />
+          </Route>
         </div>
       </Router>
     );

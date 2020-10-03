@@ -13,7 +13,7 @@ DATABASE:
 HOME / LIST PAGE:
 - [x] Display all movies from database
     - [x] GET
-- [ ] When a movie is clicked, route to /details view
+- [x] When a movie is clicked, route to /details view
 
 DETAILS PAGE:
 - [ ] Show all details of that movie, including genre
