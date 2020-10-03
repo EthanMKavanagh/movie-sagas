@@ -5,6 +5,7 @@ import NavigationBar from '../NavigationBar/NavigationBar';
 
 class AddMovieButton extends Component {
     
+    // Set initial state of what each movie object is
     state = {
         newMovie: {
             title: '',
@@ -14,6 +15,7 @@ class AddMovieButton extends Component {
         }
     }
 
+    // Input values update state here
     addMovie = (propertyName, event) => {
         this.setState({
             newMovie: {
@@ -23,13 +25,16 @@ class AddMovieButton extends Component {
         });
     }
 
+    // Submit the form
     submit = (event) => {
         event.preventDefault();
+        // Set dispatch with movie object
         this.props.dispatch({
             type: 'CREATE_MOVIE',
             payload: this.state.newMovie
         });
 
+        // Reset state
         this.setState({
             newMovie: {
                 title: '',
@@ -39,9 +44,11 @@ class AddMovieButton extends Component {
             }
         });
 
+        // After adding movie, route back to home where new movie will display
         this.props.history.push('/');
     }
 
+    // On cancel, route back to home
     cancel = () => {
         this.props.history.push('/');
     }

@@ -8,18 +8,21 @@ import Header from '../Header/Header';
 import './App.css';
 
 class App extends Component {
+
+  // On page load
   componentDidMount = () => {
     this.getMovies();
     this.getGenres();
   }
 
-  // Dispatch call for GET
+  // GET movies
   getMovies = () => {
     this.props.dispatch({
       type: 'FETCH_MOVIE'
     });
   }
 
+  // GET genres
   getGenres = () => {
     this.props.dispatch({
       type: 'FETCH_GENRE'

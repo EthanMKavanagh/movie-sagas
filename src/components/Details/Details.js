@@ -4,6 +4,7 @@ import {withRouter} from 'react-router-dom';
 
 class Details extends Component {
 
+    // On click, route back to home page
     backToList = () => {
         this.props.history.push('/');
     }
