@@ -4,8 +4,15 @@ import {connect} from 'react-redux';
 class Details extends Component {
 
     componentDidMount = () => {
-        this.props.getIndividualMovie();
+        this.getIndividualMovie();
     }
+
+    getIndividualMovie = () => {
+        this.props.dispatch({
+          type: 'FETCH_INDIVIDUAL_MOVIE',
+          payload: this.props.movies.id
+        });
+      }
 
     render() {
         return (
