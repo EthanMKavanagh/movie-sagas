@@ -1,0 +1,45 @@
+NOTES:
+
+SPINNING UP:
+- [x] npm install
+    - npm run server
+    - npm run client
+
+DATABASE:
+- [ ] Create database 'saga_movies_weekend'
+- [ ] Run 'database.sql' queries
+- [ ] Create junction table between 'movies' and 'genres' (Many to Many)
+
+HOME / LIST PAGE:
+- [ ] Display all movies from database
+    - [ ] GET
+- [ ] When a movie is clicked, route to /details view
+
+DETAILS PAGE:
+- [ ] Show all details of that movie, including genre
+- [ ] GET request for that specific movie
+- [ ] 'Back to List' button that routes to home page
+- BASE functionality doesn't require the details to load correctly after refresh of the browser
+
+ADD MOVIE PAGE:
+- [ ] Inputs for:
+    - [ ] Movie title
+    - [ ] Movie poster image (url)
+    - [ ] Text area (description)
+    - [ ] Dropdown menu for genres
+- [ ] Buttons:
+    - [ ] 'Cancel' brings user back to Home Page
+    - [ ] 'Save' update the title and description in the database, 
+           and route to Home Page that includes the new movie.
+- Look at /api/movie POST route
+- Genres in database are used for Dropdown
+- BASE functionality doesn't require ability to select more than one genre
+
+GENERAL TASKS:
+- [ ] Invest some time in styling it up!
+    - [ ] Research cards for your movie posters on the list page
+    - [ ] Research grids for your movie posters on the Movie List page
+- [ ] Update this README to include a description of the project in your own words.
+- Commit your code frequently! You should have at 15+ commits on a project of this size. 
+- Use branches to help break down your features.
+- Comment your code.
