@@ -37,7 +37,7 @@ ADD MOVIE PAGE:
 
 GENERAL TASKS:
 - [x] Invest some time in styling it up!
-    - [ ] Research cards for your movie posters on the list page
+    - [x] Research cards for your movie posters on the list page
     - [x] Research grids for your movie posters on the Movie List page 
         - (Images imported from the internet come in a different side than the ones previously imported)!!!
 - [ ] Update this README to include a description of the project in your own words.

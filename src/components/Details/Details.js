@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
+import {Card, CardContent, CardActions} from '@material-ui/core';
+import '../Details/Details.css';
 
 class Details extends Component {
 
@@ -13,13 +15,17 @@ class Details extends Component {
         return (
             <>
                 {this.props.movies.map(movie => 
-                    <div key={movie.id}>
-                        <h1>{movie.title}</h1>
-                        <h4>{movie.name}</h4>
-                        <img src={movie.poster} alt={movie.title}/>
-                        <p>{movie.description}</p>
-                        <button onClick={this.backToList}>Back To List</button>
-                    </div>
+                    <Card key={movie.id} className='card'>
+                        <CardContent>
+                            <h1>{movie.title}</h1>
+                            <h4>{movie.name}</h4>
+                            <img src={movie.poster} alt={movie.title}/>
+                            <p>{movie.description}</p>
+                        </CardContent>
+                        <CardActions>
+                            <button onClick={this.backToList}>Back To List</button>
+                        </CardActions>
+                    </Card>
                 )}
             </>
         );
