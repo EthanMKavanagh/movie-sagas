@@ -11,8 +11,8 @@ DATABASE:
 - [x] Create junction table between 'movies' and 'genres' (Many to Many)
 
 HOME / LIST PAGE:
-- [ ] Display all movies from database
-    - [ ] GET
+- [x] Display all movies from database
+    - [x] GET
 - [ ] When a movie is clicked, route to /details view
 
 DETAILS PAGE:
