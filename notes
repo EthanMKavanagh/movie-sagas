@@ -6,9 +6,9 @@ SPINNING UP:
     - npm run client
 
 DATABASE:
-- [ ] Create database 'saga_movies_weekend'
-- [ ] Run 'database.sql' queries
-- [ ] Create junction table between 'movies' and 'genres' (Many to Many)
+- [x] Create database 'saga_movies_weekend'
+- [x] Run 'database.sql' queries
+- [x] Create junction table between 'movies' and 'genres' (Many to Many)
 
 HOME / LIST PAGE:
 - [ ] Display all movies from database
