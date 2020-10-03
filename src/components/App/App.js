@@ -3,6 +3,8 @@ import {HashRouter as Router, Route} from 'react-router-dom';
 import {connect} from 'react-redux';
 import MovieList from '../MovieList/MovieList';
 import AddMovieForm from '../AddMovieForm/AddMovieForm';
+import Details from '../Details/Details';
+import Header from '../Header/Header';
 import './App.css';
 
 class App extends Component {
@@ -28,10 +30,16 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <h1>Movies!</h1>
+          <Route path='/' exact>
+            <Header />
+          </Route>
 
           <Route path='/' exact>
             <MovieList />
+          </Route>
+
+          <Route path='/details' exact>
+            <Details />
           </Route>
 
           <Route path='/add-movie-form' exact>
@@ -43,7 +51,4 @@ class App extends Component {
     );
   }
 }
-const mapStateToProps = (storeInstance) => ({
-  movies: storeInstance.movies
-});
-export default connect(mapStateToProps)(App);
+export default connect()(App);

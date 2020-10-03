@@ -29,7 +29,7 @@ function* fetchIndividualMovieSaga(action) {
     });
 
     yield put({
-        type: 'SET_MOVIE',
+        type: 'SET_INDIVIDUAL_MOVIE',
         payload: response.data
     });
 }
@@ -81,11 +81,22 @@ const genres = (state = [], action) => {
     }
 }
 
+// Used to store movie for details page
+const individualMovie = (state = [], action) => {
+    switch (action.type) {
+        case 'SET_INDIVIDUAL_MOVIE':
+            return action.payload;
+        default:
+            return state;
+    }
+}
+
 // Create one store that all components can use
 const storeInstance = createStore(
     combineReducers({
         movies,
         genres,
+        individualMovie
     }),
     // Add sagaMiddleware to our store
     applyMiddleware(sagaMiddleware, logger),
