@@ -3,18 +3,29 @@ import {withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
 import MovieListItem from '../MovieListItem/MovieListItem';
 import NavigationBar from '../NavigationBar/NavigationBar';
+import {Grid} from '@material-ui/core';
 
 class MovieList extends Component {
     render() {
         return (
             <>
                 <NavigationBar />
-                {this.props.movies.map(movie => 
-                    <MovieListItem
-                        key={movie.id}
-                        movie={movie}
-                    />
-                )}
+                <Grid
+                    container
+                    direction="row"
+                    justify="center"
+                    alignItems="center"
+                    spacing={5}
+                >
+                    {this.props.movies.map(movie => 
+                        <Grid item xs={2}>
+                            <MovieListItem
+                                key={movie.id}
+                                movie={movie}
+                            />
+                        </Grid>
+                    )}
+                </Grid>
             </>
         );
     }

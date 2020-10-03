@@ -61,10 +61,20 @@ VALUES
 ('Space-Opera'),
 ('Superhero');
 
--- junction
+-- starter junction (not correct genres for movies)
 INSERT INTO "junction" ("movie_id", "genre_id")
 VALUES 
+	(1, 3),
+	(2, 12),
 	(3, 13),
 	(4, 2),
+	(5, 5),
+	(6, 1),
 	(7, 7),
-	(9, 8);
+	(8, 2),
+	(9, 8),
+	(10, 4),
+	(11, 9),
+	(12, 8),
+	(13, 11),
+	(14, 10);
