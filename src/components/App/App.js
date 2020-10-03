@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import {HashRouter as Router, Route} from 'react-router-dom';
 import {connect} from 'react-redux';
-import Details from '../Details/Details';
 import MovieList from '../MovieList/MovieList';
-import AddMovieButton from '../AddMovieButton/AddMovieButton';
 import AddMovieForm from '../AddMovieForm/AddMovieForm';
 import './App.css';
 
@@ -31,19 +29,15 @@ class App extends Component {
       <Router>
         <div className="App">
           <h1>Movies!</h1>
-          <AddMovieButton />
-
-          <Route path='/add-movie-form' exact>
-            <AddMovieForm />
-          </Route>
 
           <Route path='/' exact>
             <MovieList />
           </Route>
 
-          <Route path='/details' exact>
-            <Details />
+          <Route path='/add-movie-form' exact>
+            <AddMovieForm />
           </Route>
+
         </div>
       </Router>
     );
