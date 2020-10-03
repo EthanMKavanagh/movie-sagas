@@ -38,6 +38,12 @@ class AddMovieButton extends Component {
                 genre: ''
             }
         });
+
+        this.props.history.push('/');
+    }
+
+    cancel = () => {
+        this.props.history.push('/');
     }
 
     render() {
@@ -80,7 +86,8 @@ class AddMovieButton extends Component {
                         <option value='Space-Opera'>Space-Opera</option>
                         <option value='Superhero'>Superhero</option>
                     </select>
-                    <button type='submit'>Submit</button>
+                    <button onClick={this.cancel}>Cancel</button>
+                    <button type='submit'>Save</button>
                 </form>
             </div>
         );

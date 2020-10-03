@@ -27,9 +27,9 @@ ADD MOVIE PAGE:
     - [x] Movie poster image (url)
     - [x] Text area (description)
     - [x] Dropdown menu for genres
-- [ ] Buttons:
-    - [ ] 'Cancel' brings user back to Home Page
-    - [ ] 'Save' updates the title and description in the database, 
+- [x] Buttons:
+    - [x] 'Cancel' brings user back to Home Page
+    - [x] 'Save' updates the title and description in the database, 
            and route to Home Page that includes the new movie.
 - Look at /api/movie POST route
 - Genres in database are used for Dropdown
