@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import {HashRouter as Router, Route} from 'react-router-dom';
 import {connect} from 'react-redux';
-import {withRouter} from 'react-router-dom';
 import Details from '../Details/Details';
+import MovieList from '../MovieList/MovieList';
 import './App.css';
 
 class App extends Component {
@@ -29,18 +29,8 @@ class App extends Component {
       <Router>
         <div className="App">
           <h1>Movies!</h1>
-            {this.props.movies.map(movie => 
-                <div onClick={this.details}>
-                  <img src={movie.poster} alt=''/>
-                  {/* <br /> Just for now */}
-                  <br />
-                  <span>
-                  {movie.title}
-                  <hr />
-                  {movie.description}
-                  </span>
-                </div>
-            )}
+          <MovieList />
+
           <Route path='/details' exact>
             <Details />
           </Route>
@@ -49,7 +39,4 @@ class App extends Component {
     );
   }
 }
-const mapStateToProps = (storeInstance) => ({
-  movies: storeInstance.movies
-});
-export default connect(mapStateToProps)(App);
+export default connect()(App);
