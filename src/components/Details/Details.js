@@ -14,6 +14,7 @@ class Details extends Component {
                 {this.props.movies.map(movie => 
                     <div key={movie.id}>
                         <h1>{movie.title}</h1>
+                        <h4>{movie.name}</h4>
                         <img src={movie.poster} alt={movie.title}/>
                         <p>{movie.description}</p>
                         <button onClick={this.backToList}>Back To List</button>
