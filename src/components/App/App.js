@@ -8,12 +8,20 @@ import './App.css';
 class App extends Component {
   componentDidMount = () => {
     this.getMovies();
+    this.getGenres();
   }
 
   // Dispatch call for GET
   getMovies = () => {
     this.props.dispatch({
       type: 'FETCH_MOVIE'
+    });
+  }
+
+  getIndividualMovie = () => {
+    this.props.dispatch({
+      type: 'FETCH_INDIVIDUAL_MOVIE',
+      payload: this.props.movies.id
     });
   }
 
@@ -24,19 +32,25 @@ class App extends Component {
   }
 
   render() {
-    console.log('Movie:', this.props.movie);
     return (
       <Router>
         <div className="App">
           <h1>Movies!</h1>
-          <MovieList />
+          <Route path='/' exact>
+            <MovieList />
+          </Route>
 
           <Route path='/details' exact>
-            <Details />
+            <Details 
+              getIndividualMovie={this.getIndividualMovie}
+            />
           </Route>
         </div>
       </Router>
     );
   }
 }
-export default connect()(App);
+const mapStateToProps = (storeInstance) => ({
+  movies: storeInstance.movies
+});
+export default connect(mapStateToProps)(App);

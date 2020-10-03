@@ -18,15 +18,28 @@ import {put, takeEvery} from 'redux-saga/effects';
 function* rootSaga() {
     yield takeEvery('FETCH_MOVIE', fetchMovieSaga);
     yield takeEvery('FETCH_GENRE', fetchGenreSaga);
+    yield takeEvery('FETCH_INDIVIDUAL_MOVIE', fetchIndividualMovieSaga);
+}
+
+// GET individual move saga
+function* fetchIndividualMovieSaga(action) {
+    let response = yield axios({
+        method: 'GET',
+        url: `/api/movie/${action.payload}`
+    });
+
+    yield put({
+        type: 'SET_MOVIE',
+        payload: response.data
+    });
 }
 
 // GET genres saga
-function* fetchGenreSaga() {
+function* fetchGenreSaga(action) {
     let response = yield axios({
         method: 'GET',
         url: '/api/genre'
     });
-    console.log('Response.data:', response.data);
     yield put({
         type: 'SET_GENRE',
         payload: response.data
@@ -34,12 +47,11 @@ function* fetchGenreSaga() {
 }
 
 // GET movies saga
-function* fetchMovieSaga() {
+function* fetchMovieSaga(action) {
     let response = yield axios({
         method: 'GET',
         url: '/api/movie'
     });
-    console.log('Response.data:', response.data);
     yield put({
         type: 'SET_MOVIE',
         payload: response.data

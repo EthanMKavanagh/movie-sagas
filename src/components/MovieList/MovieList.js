@@ -12,15 +12,15 @@ class MovieList extends Component {
         return (
             <>
                 {this.props.movies.map(movie => 
-                    <div onClick={this.details}>
-                    <img src={movie.poster} alt=''/>
-                    {/* <br /> Just for now */}
-                    <br />
-                    <span>
-                    {movie.title}
-                    <hr />
-                    {movie.description}
-                    </span>
+                    <div onClick={this.details} key={movie.id}>
+                        <img src={movie.poster} alt=''/>
+                        {/* <br /> Just for now until I get to styling */}
+                        <br />
+                        <span>
+                        {movie.title}
+                        <hr />
+                        {movie.description}
+                        </span>
                     </div>
                 )}
             </>
