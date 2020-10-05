@@ -17,7 +17,7 @@ class MovieListItem extends Component {
   render() {
     return (
       <div onClick={this.getIndividualMovie}>
-        <img src={this.props.movie.poster} alt=''/>
+        <img src={this.props.movie.poster} width='185px' height='274px' alt='' />
       </div>
     );
   }
